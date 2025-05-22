@@ -26,6 +26,14 @@ int main(int argc, char* argv[]) {
         std::cerr << "Failed to read TPCH data." << std::endl;
         return 1;
     }
+    
+   std::string filename = "output.txt";
+   std::vector<std::map<std::string, std::string>> table;
+
+   if (!readCSV(filename, table)){
+      std::cerr << "Failed to read CSV data." << std::endl;
+        return 1;
+   }
 
     std::map<std::string, double> results;
 
